@@ -1,1 +1,1 @@
-# Beruang.github.io
+# beruang.github.io
