@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <!-- Include components after the A-Frame script, but before <a-scene>. -->
+    <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+  </head>
+
+
+
+
+  <body>
+
+    <a-scene>
+
+      <a-sphere position="0 2.5 -5"
+                radius="4"
+                color="mistyrose"
+                wireframe="2">
+
+        <a-animation attribute="rotation"
+                     dur="10000"
+                     fill="forwards"
+                     to="360 360 360"
+                     repeat="indefinite">
+        </a-animation>
+
+      </a-sphere>
+
+      <a-torus-knot position="0 2.5 -5"
+                    color="steelblue"
+                    arc="360"
+                    p="2" q="7"
+                    radius="10"
+                    radius-tubular="0.5">
+
+          <a-animation attribute="rotation"
+                                 dur="10000"
+                                 fill="forwards"
+                                 to="180 360 45"
+                                 repeat="indefinite">
+          </a-animation>
+
+      </a-torus-knot>
+
+
+        <a-assets>
+          <a-asset-item id="brainstem"
+                        src="https://cdn.aframe.io/test-models/models/brainstem/BrainStem.gltf">
+          </a-asset-item>
+        </a-assets>
+
+
+        <a-entity gltf-model="#brainstem"
+                  position="0 0 -5"
+                  scale="3 3 3">
+        </a-entity>
+
+
+        <a-entity particle-system="preset: snow; particleCount: 100000">
+
+          <a-animation attribute="rotation"
+                       dur="10000"
+                       to="360 360 360"
+                       repeat="indefinite"
+          </a-animation>
+
+        </a-entity>
+
+      <a-sky color="black"></a-sky>
+
+    </a-scene>
+
+  </body>
+
+</html>
